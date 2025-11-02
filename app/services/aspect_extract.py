@@ -12,9 +12,11 @@ Return JSON: {{"aspects":[{{"aspect":"...", "span":[start,end], "context":"..."}
 async def extract_aspects(review: str) -> list[dict]:
     msg = USER_TMPL.format(review=review)
     resp = _client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role":"system","content":SYSTEM},{"role":"user","content":msg}],
-        temperature=0
-    )
+    model=settings.OPENAI_CHAT_MODEL,   # optional: use your env model
+    messages=[{"role":"system","content":SYSTEM},{"role":"user","content":msg}],
+    temperature=0,
+    response_format={"type": "json_object"}   # <-- add this line
+)
     data = json.loads(resp.choices[0].message.content)
     return data.get("aspects", [])
+

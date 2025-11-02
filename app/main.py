@@ -8,6 +8,7 @@ def create_app():
     app = FastAPI(title="RAG-ABSA")
     app.include_router(health_router)
     app.include_router(analyze_router)
+    app.include_router(batch_router)
     return app
 
 app = create_app()
