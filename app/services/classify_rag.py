@@ -4,7 +4,7 @@ from app.services.llm import chat_json
 
 RAG_TMPL = """You are great at aspect-based sentiment with sarcasm and implicit aspects.
 Here are similar examples:
-{evidence}
+{evidence} 
 Now analyze:
 Review: {review}
 Aspect: {aspect}
