@@ -9,7 +9,7 @@ router = APIRouter(prefix="/api/v1")
 class AnalyzeIn(BaseModel):
     review_text: str
     include_baseline: bool = True
-    return_evidence: bool = True
+   # return_evidence: bool = True
 
 @router.post("/analyze")
 async def analyze(body: AnalyzeIn):

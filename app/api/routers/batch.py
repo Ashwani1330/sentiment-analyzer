@@ -57,7 +57,7 @@ async def batch_analyze(req: BatchAnalyzeRequest):
                     sentiment=r["sentiment"],
                     confidence=r.get("confidence"),
                     reasoning=r.get("reasoning"),
-                    evidence=r.get("evidence") if req.return_evidence else None
+                    #evidence=r.get("evidence") if req.return_evidence else None
                 )
                 for r in result.get("rag_results", [])
             ]

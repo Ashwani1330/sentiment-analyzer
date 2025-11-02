@@ -4,7 +4,7 @@ from typing import List, Optional, Any
 class AnalyzeIn(BaseModel):
     review_text: str = Field(..., min_length=1)
     include_baseline: bool = True
-    return_evidence: bool = True
+    #return_evidence: bool = True
 
 class Evidence(BaseModel):
     text: str
@@ -16,7 +16,7 @@ class AspectOut(BaseModel):
     sentiment: str
     confidence: Optional[float] = None
     reasoning: Optional[str] = None
-    evidence: Optional[List[Evidence]] = None
+    #evidence: Optional[List[Evidence]] = None
 
 class AnalyzeOut(BaseModel):
     rag_results: List[AspectOut]

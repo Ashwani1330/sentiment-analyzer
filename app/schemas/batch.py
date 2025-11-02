@@ -23,7 +23,7 @@ class AspectPrediction(BaseModel):
     sentiment: Sentiment
     confidence: Optional[float] = None
     reasoning: Optional[str] = None
-    evidence: Optional[list] = None  # passthrough from your pipeline if requested
+    #evidence: Optional[list] = None  # passthrough from your pipeline if requested
 
 class ReviewResult(BaseModel):
     id: str
